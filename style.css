@@ -1,0 +1,99 @@
+
+
+body {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  height: 100vh;
+  
+}
+
+
+#toolbar{
+  display: flex;
+  justify-content: space-around;
+  padding: 0.5rem;
+  /* background: #89ECF9; */
+}
+
+.toolbarElement{
+  /* display: inline; */
+  /* background: #07E3FF; */
+
+}
+.toolbarElement h3{
+  width: fit-content;
+  padding: 0.5rem;
+  margin: 0;
+  /* border-radius: 0.5rem 0.5rem; */
+}
+
+#checkPage #inputs{
+  padding: 0.5rem;
+  /* background: #FC7373; */
+  display: grid;
+  font-size: 1.2rem;
+} 
+#inputs label{
+  font-weight: bold;
+  
+  margin: 0.5rem;
+  padding: 0.2rem;
+  /* background: #FF1717; */
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  
+}
+
+#inputs input{
+  padding: 0.2rem;
+  font-weight: bold;
+  text-align: center;
+  width: 50%;
+  font-size: 1.2rem;
+}
+
+#action{
+  padding: 0.5rem;
+  /* background: #FFAE4F; */
+  display: flex;
+  justify-content: space-evenly;
+}
+/* #action */button{
+  font-weight: bold;
+  
+  padding: 0.5rem;
+  font-size: 1rem;
+  background: #F98C0C;
+  border: none;
+  width: 20%;
+}
+
+/* #action */ button:active{
+  background: #DE7801;
+
+}
+
+#result{
+  /* background: #0CD7F9; */
+  padding: 0.5rem;
+}
+
+#result table{
+  width: 100%;
+  text-align: center;
+}
+
+#logPage{
+  display: none;
+}
+
+#confirmAction{
+  display: flex;
+  padding: 0.5rem;
+  justify-content: space-evenly;
+}
+/* #resultTable{
+  visibility : hidden;
+} */
