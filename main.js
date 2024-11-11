@@ -2,6 +2,8 @@
 
 // console.log(result);
 
+let currentEntryArray = [];
+let storedDataArray = [];
 
 
 function getInput(){
@@ -25,7 +27,6 @@ function checkForInput() {
   return itemName.value && itemPrice.value && itemQuantity.value ? true : false;
 }
 
-let currentEntryArray = [];
 
 submitBtn.onclick = () => {
   
@@ -34,21 +35,37 @@ submitBtn.onclick = () => {
     return;
   }
   
-  let date = window.prompt('  Date??  DD/MM/YYYY');
-  if (!date){
-    window.alert('No date')
-    return;
-  } 
+   
 
   currentEntryArray.push(getInput())
   renderHTML(makeTableRow(currentEntryArray))
   total.textContent = getTotal(currentEntryArray)
   
-  console.log(date)
+  
   
 } 
 
 clearBtn.onclick = () => clearInput();
+
+saveBtn.onclick = () => {
+
+  if(currentEntryArray.length == 0) {
+    window.alert('No entry made');
+    return;
+  };
+
+  let date = window.prompt('  Date??  DD/MM/YYYY');
+  if (!date){
+    window.alert('No date')
+    return;
+  }
+
+  let object = {date: date, data: currentEntryArray}
+
+  saveToStoredData(object);
+
+  
+}
 
 
 function makeTableRow(arrayOfObjects){
@@ -80,6 +97,19 @@ function getTotal(obj){
 function renderHTML(array) {
   tableBody.innerHTML = array.join(' ');
 }
+
+
+
+function saveToStoredData(obj){
+  storedDataArray.push({
+    Date: obj.date,
+    Data: obj.data
+  });
+  currentEntryArray = [];
+  console.log(storedDataArray);
+  console.log(currentEntryArray);
+}
+
 
 
 
